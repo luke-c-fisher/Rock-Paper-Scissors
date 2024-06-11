@@ -2,29 +2,46 @@
 // STEP 1: Write the logic to get the computer code
 
 // create a function called "getComputerChoice"
+// Make "getComputerChoice" randomly return the following string values: "rock", "paper", or "scissors"
+// Use "console log" to test the results
+
 function getComputerChoice() {
     return Math.random();
 }
 
 if (getComputerChoice() > 0.5) {
-    alert("Rock")
+    alert("Rock");
 } else if (getComputerChoice < 0.5) {
-    alert("Paper")
+    alert("Paper");
 } else {
-    alert("Scissors")
+    alert("Scissors");
 }
-
-console.log(getComputerChoice());
-
-
-// Make "getComputerChoice" randomly return the following string values: "rock", "paper", or "scissors"
-// Use "console log" to test the results
 
 // STEP 2: Write the logic to get the human choice
 
 // create a function called "getHumanChoice"
 // Make "getHumanChoice" return one of the valid options--"rock","paper", or "scissors"--depending on what the user inputs 
 // Test the function using "console.log"
+
+let humanInput = prompt("Pick an option", 1);
+
+if (humanInput > 1) {
+    function getHumanChoice() {
+        alert("Rock");
+    } 
+}  else if (humanInput < 1) {
+        function getHumanChoice() {
+            alert("Paper");
+        }
+    } else {
+            function getHumanChoice() {
+            alert("Scissors");
+            }
+        }
+
+console.log(getHumanChoice(1));
+
+
 
 // STEP 3: Declare the players score variables 
 
