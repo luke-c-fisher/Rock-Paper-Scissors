@@ -27,23 +27,21 @@ console.log(computerChoice());
 // Make "getHumanChoice" return one of the valid options--"rock","paper", or "scissors"--depending on what the user inputs 
 // Test the function using "console.log"
 
-let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
 
-if (humanInput > 1) {
-    function getHumanChoice() {
+function getHumanChoice() {
+    let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
+    if (humanInput === "Rock") {
         alert("Rock");
-    } 
-}  else if (humanInput < 1) {
-        function getHumanChoice() {
-            alert("Paper");
-        }
+    } else if (humanInput === "Paper") {
+        alert("Paper");
+    } else if (humanInput === "Scissors") {
+        alert("Scissors");
     } else {
-            function getHumanChoice() {
-            alert("Scissors");
-            }
-        }
+        alert("Please enter a valid option")
+    }
+}
 
-console.log(getHumanChoice(1));
+console.log(getHumanChoice());
 
 // Call the function to show the alert based on user input
 getHumanChoice();
