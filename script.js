@@ -16,10 +16,10 @@ function getComputerChoice() {
     }
 }
 
+console.log(computerChoice());
+
 // Example usage
-let computerChoice = getComputerChoice();
-alert(computerChoice);
-console.log(computerChoice);
+
 
 // STEP 2: Write the logic to get the human choice
 
@@ -27,26 +27,23 @@ console.log(computerChoice);
 // Make "getHumanChoice" return one of the valid options--"rock","paper", or "scissors"--depending on what the user inputs 
 // Test the function using "console.log"
 
-let humanInput = prompt("Pick an option: rock, paper, or scissors", '');
+let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
 
-function getHumanChoice() {
-    if (humanInput === null) {
-        alert("No input provided");
-        return; 
-    }
-
-    let inputLower = humanInput.toLowerCase();
-    
-    if (inputLower === 'rock') {
+if (humanInput > 1) {
+    function getHumanChoice() {
         alert("Rock");
-    } else if (inputLower === 'paper') {
-        alert("Paper");
-    } else if (inputLower === 'scissors') {
-        alert("Scissors");
+    } 
+}  else if (humanInput < 1) {
+        function getHumanChoice() {
+            alert("Paper");
+        }
     } else {
-        alert("Invalid input. Please enter rock, paper, or scissors");
-    }
-}
+            function getHumanChoice() {
+            alert("Scissors");
+            }
+        }
+
+console.log(getHumanChoice(1));
 
 // Call the function to show the alert based on user input
 getHumanChoice();
@@ -75,9 +72,6 @@ function playRound(humanChoice, computerChoice)
 
 // create condition for computerChoice 
 
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
