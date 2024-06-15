@@ -30,17 +30,16 @@ console.log(computerChoice());
 
 function getHumanChoice() {
     let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
-    if (humanInput === "Rock") {
+    if (humanInput.toLowerCase() === "rock") {
         alert("Rock");
-    } else if (humanInput === "Paper") {
+    } else if (humanInput.toLowerCase() === "paper") {
         alert("Paper");
-    } else if (humanInput === "Scissors") {
+    } else if (humanInput.toLowerCase() === "scissors") {
         alert("Scissors");
     } else {
-        alert("Please enter a valid option")
+        alert("Please enter a valid option");
     }
 }
-
 console.log(getHumanChoice());
 
 // Call the function to show the alert based on user input
@@ -64,17 +63,20 @@ let computerScore = 0;
 
 // Create a new function named playRound.
 // Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
-function playRound(humanChoice, computerChoice)
+
+// function playRound(humanChoice, computerChoice)
+
 // create condition for humanChoice
 
 
 // create condition for computerChoice 
 
 
-playRound(humanSelection, computerSelection);
+// playRound(humanSelection, computerSelection);
 
 // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
-let humanChoice = humanChoice.toLowerCase();
+
+// let humanChoice = humanChoice.toLowerCase();
 
 // Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 // Increment the humanScore or computerScore variable based on the round winner.
