@@ -16,7 +16,7 @@ function getComputerChoice() {
     }
 }
 
-console.log(computerChoice());
+console.log(getComputerChoice());
 
 // Example usage
 
@@ -64,9 +64,70 @@ let computerScore = 0;
 // Create a new function named playRound.
 // Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
 
-// function playRound(humanChoice, computerChoice)
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice > computerChoice) {
+        humanScore++;
+        alert("You win" + humanScore); 
+    } else if (computerChoice > humanChoice) {
+        computerChoice++;
+        alert("You lose" + computerScore);
+    } else {
+        alert("it's a draw");
+    }
+    }
+    // return humanChoice and computerChoice 
+    // Compare choices
+    // Create conditions for winning or losing 
+    // increment humanScore or computerScore depending on who wins
 
-// create condition for humanChoice
+
+
+    // **Example code**
+
+// let bScore = 0;
+// let aScore = 0;
+
+// let numA = Math.random();
+// let numB = Math.random();
+
+// function compare(a, b) {
+    // if (a > b) {
+        // aScore++;
+        // alert("a wins" + aScore);
+// } else if (b > a) {
+        // bScore++;
+        // alert("b wins" + '' + bScore);
+    // } else {
+        // alert("it's a draw");
+    // }
+// }
+
+    // console.log(compare(numA, numB));
+
+    // function compare(choiceA, choiceB) {
+        // let choices = ["Rock", "Paper", "Scissors"];
+        // let indexA = choices.indexOf(choiceA);
+        // let indexB = choices.indexOf(choiceB);
+        // 
+        // if (indexA === -1 || indexB === -1) {
+            // return "invalid choices";
+        // }
+        // if (indexA === indexB) {
+            // return("It's a tie!");
+        // } else if (indexA === 0 && indexB === 2) {
+            // aScore++;
+            // return "You win! Rock beats paper";
+        //}
+
+        // }
+        // 
+        
+    // }
+
+
+    // **Example code**
+
+
 
 
 // create condition for computerChoice 
