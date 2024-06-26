@@ -64,16 +64,28 @@ let computerScore = 0;
 // Create a new function named playRound.
 // Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice > computerChoice) {
-        humanScore++;
-        alert("You win" + humanScore); 
-    } else if (computerChoice > humanChoice) {
-        computerChoice++;
-        alert("You lose" + computerScore);
-    } else {
-        alert("it's a draw");
-    }
+ function playRound(humanChoice, computerChoice) {
+        let choices = ["Rock", "Paper", "Scissors"];
+        let indexHum = choices.indexOf(humanChoice);
+        let indexCom = choices.indexOf(computerChoice);
+        if (indexHum === -1 || indexCom === -1) {
+            return "invalid choices";
+        }
+        if (indexHum === indexCom) {
+            return("It's a tie!");
+        } else if (indexHum === 0 && indexCom === 2) {
+            humanScore++;
+            return "You win! Rock beats scissors.";
+        } else if (indexHum === 1 && indexCom === 0) {
+            humanScore++;
+            return "You win! Paper beats rock.";
+        } else if (indexHum === 2 && indexCom === 1) {
+            humanScore++;
+            return "You win! Scissors beats paper.";
+        } else {
+            computerScore++;
+            return "You lose! Computer wins."
+        }
     }
     // return humanChoice and computerChoice 
     // Compare choices
@@ -82,27 +94,11 @@ function playRound(humanChoice, computerChoice) {
 
 
 
-    // **Example code**
-
-// let bScore = 0;
-// let aScore = 0;
-
-// let numA = Math.random();
-// let numB = Math.random();
-
-// function compare(a, b) {
-    // if (a > b) {
-        // aScore++;
-        // alert("a wins" + aScore);
-// } else if (b > a) {
-        // bScore++;
-        // alert("b wins" + '' + bScore);
-    // } else {
-        // alert("it's a draw");
-    // }
-// }
 
     // console.log(compare(numA, numB));
+
+    // let bScore = 0;
+    // let aScore = 0;  
 
     // function compare(choiceA, choiceB) {
         // let choices = ["Rock", "Paper", "Scissors"];
@@ -117,7 +113,9 @@ function playRound(humanChoice, computerChoice) {
         // } else if (indexA === 0 && indexB === 2) {
             // aScore++;
             // return "You win! Rock beats paper";
-        //}
+        //} else if (indexA === 1 && indexB === 0) {
+            // aScore
+        }
 
         // }
         // 
