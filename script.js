@@ -23,14 +23,18 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
-    if (humanInput === "rock") {
-        return "Rock";
-    } else if (humanInput === "paper") {
-        return "Paper";
-    } else if (humanInput === "scissors") {
-        return "Scissors";
-    } else {
-        return "Please enter a valid option";
+    
+    if (humanInput) {
+        let humanInputLow = humanInput.toLowerCase();
+        if (humanInputLow === "rock") {
+            return "rock";
+        } else if (humanInputLow === "paper") {
+            return "paper";
+        } else if (humanInputLow === "scissors") {
+            return "scissors";
+        } else {
+            return "Please enter a valid option";
+        }
     }
 }
 
@@ -48,32 +52,30 @@ let computerScore = 0;
 
  function playRound(humanChoice, computerChoice) {
         let humanChoiceLow = humanChoice.toLowerCase();
+        let computerChoiceLow = computerChoice.toLowerCase();
+
         if (humanChoiceLow === computerChoice) {
-            return "It's a tie!";
-        }
-        
-        if (humanChoiceLow === 'rock' && computerChoice === 'Scissors') {
+            alert("It's a tie!");
+        } 
+
+        if (humanChoiceLow === 'rock' && computerChoiceLow === 'scissors') {
             humanScore++;
-            return `You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`;
-        } else if (humanChoice === 'Scissors' && computerChoice === 'Paper') {
+            alert(`You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`);
+        } else if (humanChoiceLow === 'scissors' && computerChoiceLow === 'paper') {
             humanScore++;
-            return `You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`;
-        } else if (humanChoice === 'Paper' && computerChoice ==='Rock') {
+            alert(`You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`);
+        } else if (humanChoiceLow === 'paper' && computerChoiceLow ==='rock') {
             humanScore++;
-            return `You win! Paper beats Rock. Score:${humanScore}:${computerScore}`;
+            alert(`You win! Paper beats Rock. Score:${humanScore}:${computerScore}`);
         } else {
             computerScore++;
-            return `You lose! Score:${humanScore}:${computerScore}`
+            alert(`You lose! The computer wins. Score:${humanScore}:${computerScore}`);
         }
     }
-
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
-
-    
-
 
     // return humanChoice and computerChoice 
     // Compare choices
