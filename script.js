@@ -92,9 +92,24 @@ playRound(humanSelection, computerSelection);
 // playRound(humanSelection, computerSelection);
 
 // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
-
-// let humanChoice = humanChoice.toLowerCase();
-
 // Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 // Increment the humanScore or computerScore variable based on the round winner.
+
+// ------STEP 5:
+
+// --CREATE A FUNCTION CALLED PLAYGAME.
+// 
+// function playGame(){
+// 
+//
+// ---CALL PLAYROUND FUNCTION 5 TIMES
+// for (let i = 1; i <= 5; i++){
+//  const result = playRound(humanSelection, computerSelection);
+// }
+// 
+// 
+// ---DECLARE SCORE VARIABLES.
+// let humanScore = 0;
+// let computerScore = 0;
+// }
 
