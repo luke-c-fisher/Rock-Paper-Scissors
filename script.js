@@ -52,22 +52,18 @@ let computerScore = 0;
 
  function playRound(humanChoice, computerChoice) {
 
-        if (humanChoiceLow === computerChoice) {
-            alert("It's a tie!");
-        } 
-
-        if (humanChoiceLow === 'rock' && computerChoiceLow === 'scissors') {
+        if (humanChoice === 'rock' && computerChoice === 'scissors') {
             humanScore++;
-            alert(`You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`);
-        } else if (humanChoiceLow === 'scissors' && computerChoiceLow === 'paper') {
+            console.log(`You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`);
+        } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
             humanScore++;
-            alert(`You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`);
-        } else if (humanChoiceLow === 'paper' && computerChoiceLow ==='rock') {
+            console.log(`You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`);
+        } else if (humanChoice === 'paper' && computerChoice ==='rock') {
             humanScore++;
-            alert(`You win! Paper beats Rock. Score:${humanScore}:${computerScore}`);
+            console.log(`You win! Paper beats Rock. Score:${humanScore}:${computerScore}`);
         } else {
             computerScore++;
-            alert(`You lose! The computer wins. Score:${humanScore}:${computerScore}`);
+            console.log(`You lose! The computer wins. Score:${humanScore}:${computerScore}`);
         }
     }
     const humanSelection = getHumanChoice();
@@ -98,26 +94,24 @@ playRound(humanSelection, computerSelection);
 // --CREATE A FUNCTION CALLED PLAYGAME.
 // 
 // function playGame(){
-    // for (let i = 1; i <= 5; i++) {
-        // let result = getHumanChoice();
-        // console.log(result)
-    // }
-// 
+//     let result = playRound();
+//     let humanScore = 0;
+//     let computerScore = 0;
+
+//     // **Recall choice functions 5 times**
+//     for (let i = 1; i <= 5; i++) {
+//         let input = getHumanChoice();
+//         let response = getComputerChoice();
+        // }
+// }
+
+// playGame();
+    
+//     
 //
-// ---CALL PLAYROUND FUNCTION 5 TIMES
-// for (let i = 1; i <= 5; i++){
-//  const result = playRound(humanSelection, computerSelection);
-// }
 // ---Find return values of choice functions and assign them to variables
-// for(i = 1; i <= 5; i++){
-// let result = getComputerChoice();
-// console.log(result);
-// }
 // ---Find a way to get a return value for playRound when it is called 
-// ---find a way to fit the result from playRound into for loop
 // 
 // 
-// ---DECLARE SCORE VARIABLES.
-// let humanScore = 0;
-// let computerScore = 0;
+// 
 // }
