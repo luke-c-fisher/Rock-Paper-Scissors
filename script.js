@@ -51,8 +51,6 @@ let humanScore = 0;
 let computerScore = 0;
 
  function playRound(humanChoice, computerChoice) {
-        let humanChoiceLow = humanChoice.toLowerCase();
-        let computerChoiceLow = computerChoice.toLowerCase();
 
         if (humanChoiceLow === computerChoice) {
             alert("It's a tie!");
@@ -99,11 +97,11 @@ playRound(humanSelection, computerSelection);
 
 // --CREATE A FUNCTION CALLED PLAYGAME.
 // 
-function playGame(){
-    for (let i = 1; i <= 5; i++) {
-        let result = getHumanChoice();
-        console.log(result)
-    }
+// function playGame(){
+    // for (let i = 1; i <= 5; i++) {
+        // let result = getHumanChoice();
+        // console.log(result)
+    // }
 // 
 //
 // ---CALL PLAYROUND FUNCTION 5 TIMES
@@ -123,4 +121,3 @@ function playGame(){
 // let humanScore = 0;
 // let computerScore = 0;
 // }
-
