@@ -99,13 +99,24 @@ playRound(humanSelection, computerSelection);
 
 // --CREATE A FUNCTION CALLED PLAYGAME.
 // 
-// function playGame(){
+function playGame(){
+    for (let i = 1; i <= 5; i++) {
+        let result = getHumanChoice();
+        console.log(result)
+    }
 // 
 //
 // ---CALL PLAYROUND FUNCTION 5 TIMES
 // for (let i = 1; i <= 5; i++){
 //  const result = playRound(humanSelection, computerSelection);
 // }
+// ---Find return values of choice functions and assign them to variables
+// for(i = 1; i <= 5; i++){
+// let result = getComputerChoice();
+// console.log(result);
+// }
+// ---Find a way to get a return value for playRound when it is called 
+// ---find a way to fit the result from playRound into for loop
 // 
 // 
 // ---DECLARE SCORE VARIABLES.
