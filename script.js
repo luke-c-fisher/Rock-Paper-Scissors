@@ -64,6 +64,7 @@ let computerScore = 0;
         } else {
             computerScore++;
             console.log(`You lose! The computer wins. Score:${humanScore}:${computerScore}`);
+            
         }
     }
     const humanSelection = getHumanChoice();
@@ -93,17 +94,28 @@ playRound(humanSelection, computerSelection);
 
 // --CREATE A FUNCTION CALLED PLAYGAME.
 // 
-// function playGame(){
-//     let result = playRound();
-//     let humanScore = 0;
-//     let computerScore = 0;
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
 
 //     // **Recall choice functions 5 times**
-//     for (let i = 1; i <= 5; i++) {
-//         let input = getHumanChoice();
-//         let response = getComputerChoice();
-        // }
-// }
+    for(i = 1; i <= 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+
+// Create a condition in which the computer or human wins 
+    if (humanScore > computerScore) {
+        console.log(`Congratulations, you won the round!`)
+    }
+    else {
+        console.log(`You lose! The computer won this round.`)
+    }
+
+    
+}
+}
 
 // playGame();
     
