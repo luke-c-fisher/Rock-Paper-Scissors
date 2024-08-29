@@ -7,11 +7,11 @@
 function getComputerChoice() {
     let randomNum = Math.random();
     if (randomNum < 0.33) {
-        return "Rock";
+        return "rock";
     } else if (randomNum < 0.66) {
-        return "Paper";
+        return "paper";
     } else {
-        return "Scissors";
+        return "scissors";
     }
 }
 
@@ -23,20 +23,21 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
-    
-    if (humanInput) {
-        let humanInputLow = humanInput.toLowerCase();
-        if (humanInputLow === "rock") {
+
+    // if (humanInput) {
+        // let humanInputLow = humanInput.toLowerCase();
+        if (humanInput === "rock") {
             return "rock";
-        } else if (humanInputLow === "paper") {
+        } else if (humanInput === "paper") {
             return "paper";
-        } else if (humanInputLow === "scissors") {
+        } else if (humanInput=== "scissors") {
             return "scissors";
         } else {
             return "Please enter a valid option";
         }
+        return humanInput;
     }
-}
+// }
 
 // STEP 3: Declare the players score variables 
 // Create two new variables named humanScore and computerScore in the global scope.
@@ -70,7 +71,7 @@ let computerScore = 0;
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+// playRound(humanSelection, computerSelection);
 
     // return humanChoice and computerChoice 
     // Compare choices
@@ -106,18 +107,16 @@ function playGame(){
     playRound(humanSelection, computerSelection);
 
 // Create a condition in which the computer or human wins 
-    if (humanScore > computerScore) {
-        console.log(`Congratulations, you won the round!`)
-    }
-    else {
-        console.log(`You lose! The computer won this round.`)
-    }
-
-    
+//     if (humanScore === 5) {
+//         console.log(`Congratulations, you won the round!`)
+//     } else (computerScore === 5){
+//         console.log(`You lose! The computer won this round.`)
+//     }
+// }
 }
 }
 
-// playGame();
+playGame();
     
 //     
 //
