@@ -35,7 +35,7 @@ function getHumanChoice() {
         } else {
             return "Please enter a valid option";
         }
-        return humanInput;
+        // return humanInput;
     }
 // }
 
@@ -99,24 +99,30 @@ function playGame(){
     let humanScore = 0;
     let computerScore = 0;
 
-//     // **Recall choice functions 5 times**
+// Create a condition in which the computer or human wins 
+
+
+// **Recall choice functions 5 times**
+
     for(i = 1; i <= 5; i++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
 
-// Create a condition in which the computer or human wins 
-//     if (humanScore === 5) {
-//         console.log(`Congratulations, you won the round!`)
-//     } else (computerScore === 5){
-//         console.log(`You lose! The computer won this round.`)
-//     }
-// }
-}
 }
 
-playGame();
+// if (humanScore === 5) {
+//     console.log(`Congratulations, you won the round!`)
+// } else if (computerScore === 5){
+//     console.log(`You lose! The computer won this round.`)
+// } else {
+//     console.log(`It's a tie!`)
+// }
+
+}
+
+// playGame();
     
 //     
 //
