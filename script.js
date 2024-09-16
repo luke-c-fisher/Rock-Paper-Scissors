@@ -94,15 +94,30 @@ let computerScore = 0;
 // --CREATE A FUNCTION CALLED PLAYGAME.
 // 
 function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+
     for(i = 1; i <= 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
 }
+if (humanScore == 3 && computerScore == 2){
+    console.log('You win this round!');
+    } else if (humanScore == 3 && computerScore == 1){
+        console.log('You win this round!');
+    } else if (humanScore == 3 && computerScore == 0){
+        console.log('You win this round!');
+    } else {
+        console.log("You lose! Computer wins.")
+    }
 }
 
+// let humanPlays = 0;
+// let computerPlays = 0;
 
-playGame();
+
+playGame(humanScore, computerScore);
     
 //     
 //
