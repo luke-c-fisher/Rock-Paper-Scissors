@@ -85,8 +85,6 @@ let computerScore = 0;
 // create condition for computerChoice 
 
 
-// playRound(humanSelection, computerSelection);
-
 // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
 // Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 // Increment the humanScore or computerScore variable based on the round winner.
@@ -96,38 +94,18 @@ let computerScore = 0;
 // --CREATE A FUNCTION CALLED PLAYGAME.
 // 
 function playGame(){
-    let humanScore = 0;
-    let computerScore = 0;
-
-// Create a condition in which the computer or human wins 
-
-
-// **Recall choice functions 5 times**
-
     for(i = 1; i <= 5; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    playRound(humanSelection, computerSelection);
-
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+}
 }
 
-// if (humanScore === 5) {
-//     console.log(`Congratulations, you won the round!`)
-// } else if (computerScore === 5){
-//     console.log(`You lose! The computer won this round.`)
-// } else {
-//     console.log(`It's a tie!`)
-// }
 
-}
-
-// playGame();
+playGame();
     
 //     
 //
-// ---Find return values of choice functions and assign them to variables
-// ---Find a way to get a return value for playRound when it is called 
 // 
 // 
 // 
