@@ -113,9 +113,6 @@ if (humanScore == 3 && computerScore == 2){
     }
 }
 
-// let humanPlays = 0;
-// let computerPlays = 0;
-
 
 playGame(humanScore, computerScore);
     
