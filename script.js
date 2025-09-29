@@ -35,8 +35,8 @@ function getHumanChoice() {
         } else {
             return "Please enter a valid option";
         }
-        // return humanInput;
-    }
+        return humanInput;
+    };
 // }
 
 // STEP 3: Declare the players score variables 
@@ -93,28 +93,38 @@ let computerScore = 0;
 
 // --CREATE A FUNCTION CALLED PLAYGAME.
 // 
-function playGame(){
-    let humanScore = 0;
-    let computerScore = 0;
+// function playGame(){
+//     let humanScore = 0;
+//     let computerScore = 0;
 
-    for(i = 1; i <= 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-}
-if (humanScore == 3 && computerScore == 2){
-    console.log('You win this round!');
-    } else if (humanScore == 3 && computerScore == 1){
-        console.log('You win this round!');
-    } else if (humanScore == 3 && computerScore == 0){
-        console.log('You win this round!');
-    } else {
-        console.log("You lose! Computer wins.")
-    }
-}
+//     for(i = 1; i <= 5; i++) {
+//         const humanSelection = getHumanChoice();
+//         const computerSelection = getComputerChoice();
+//         playRound(humanSelection, computerSelection);
+// }
+// if (humanScore == 3 && computerScore == 2){
+//     console.log('You win this round!');
+//     } else if (humanScore == 3 && computerScore == 1){
+//         console.log('You win this round!');
+//     } else if (humanScore == 3 && computerScore == 0){
+//         console.log('You win this round!');
+//     } else {
+//         console.log("You lose! Computer wins.")
+//     }
+// }
+
+// playGame(humanScore, computerScore);
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+rock.addEventListener('click', function() {
+    return playRound(humanSelection, computerSelection);
+})
 
 
-playGame(humanScore, computerScore);
+
     
 //     
 //
