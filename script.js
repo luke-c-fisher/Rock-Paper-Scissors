@@ -39,7 +39,7 @@ function getComputerChoice() {
 //     };
 // }
 
-// STEP 3: Declare the players score variables 
+// STEP 3:  the players score variables 
 // Create two new variables named humanScore and computerScore in the global scope.
 // Initialize those variables with the value of 0.
 
@@ -164,25 +164,32 @@ let computerScore = 0;
     container.appendChild(results);
 };
 
-function result(){
-    const decision = document.createElement("div");
+// function playGame (){
+//     const decision = document.createElement("div");
 
-    for (let i = 0; i <= 5; i++){
-        
+//     for (let i = 0; i <= 5; i++){
+//         let userScore = 0
+//         let compScore = 0
+//         playRound(humanSelection, computerSelection);
 
-    }
+//         if (userScore === 3 && compScore <= 2) {
+//             decision.textContent = 'You win this round!';
+//         } else {
+//             decision.textContent = 'You lose! Computer wins.';
+//         }
+//     };
 
-    container.appendChild(decision);
-    
-}
+//     container.appendChild(decision);
+// }
 
+for (let i = 0; i <= 5; i++){
+    rock.addEventListener("click", function() {
+        let humanSelection = "rock";
+        let computerSelection = getComputerChoice();
 
-rock.addEventListener("click", function() {
-    let humanSelection = "rock";
-    let computerSelection = getComputerChoice();
-
-    playRound(humanSelection, computerSelection);
-});
+        playRound(humanSelection, computerSelection);
+    });
+};
 
 paper.addEventListener("click", function() {
     let humanSelection = "paper";
@@ -199,18 +206,3 @@ scissors.addEventListener("click", function() {
 });
 
 
-
-
-
-
-
-
-
-
-    
-//     
-//
-// 
-// 
-// 
-// }
