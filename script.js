@@ -21,22 +21,22 @@ function getComputerChoice() {
 // Test the function using "console.log"
 
 
-function getHumanChoice() {
-    let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
+// function getHumanChoice() {
+//     let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
 
-    // if (humanInput) {
-        // let humanInputLow = humanInput.toLowerCase();
-        if (humanInput === "rock") {
-            return "rock";
-        } else if (humanInput === "paper") {
-            return "paper";
-        } else if (humanInput=== "scissors") {
-            return "scissors";
-        } else {
-            return "Please enter a valid option";
-        }
-        return humanInput;
-    };
+//     if (humanInput) {
+//         let humanInputLow = humanInput.toLowerCase();
+//         if (humanInput === "rock") {
+//             return "rock";
+//         } else if (humanInput === "paper") {
+//             return "paper";
+//         } else if (humanInput=== "scissors") {
+//             return "scissors";
+//         } else {
+//             return "Please enter a valid option";
+//         }
+//         return humanInput;
+//     };
 // }
 
 // STEP 3: Declare the players score variables 
@@ -67,19 +67,7 @@ let computerScore = 0;
             console.log(`You lose! The computer wins. Score:${humanScore}:${computerScore}`);
             
         }
-    }
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-// playRound(humanSelection, computerSelection);
-
-    // return humanChoice and computerChoice 
-    // Compare choices
-    // Create conditions for winning or losing 
-    // increment humanScore or computerScore depending on who wins
-
-
-
+    };
 
 
 // create condition for computerChoice 
@@ -115,13 +103,38 @@ let computerScore = 0;
 
 // playGame(humanScore, computerScore);
 
+
+
+const container = document.getElementById("container");
+
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
-rock.addEventListener('click', function() {
-    return playRound(humanSelection, computerSelection);
-})
+rock.addEventListener("click", function() {
+    let humanSelection = "rock"
+    let computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+});
+
+paper.addEventListener("click", function() {
+    let humanSelection = "paper"
+    let computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+});
+
+rock.addEventListener("click", function() {
+    let humanSelection = "scissors"
+    let computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+});
+
+
+
+
 
 
 
