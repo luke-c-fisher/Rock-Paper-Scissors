@@ -2,7 +2,7 @@
 // STEP 1: Write the logic to get the computer code
 // create a function called "getcompChoice"
 // Make "getcompChoice" randomly return the following string values: "rock", "paper", or "scissors"
-// Use "console log" to test the results
+// Use "console log" to test the outcomes
 
 function getcompChoice() {
     let randomNum = Math.random();
@@ -18,7 +18,7 @@ function getcompChoice() {
 // STEP 2: Write the logic to get the human choice
 // create a function called "getuserChoice"
 // Make "getuserChoice" return one of the valid options--"rock","paper", or "scissors"--depending on what the user inputs 
-// Test the function using "results.textContent"
+// Test the function using "outcomes.textContent"
 
 
 // function getuserChoice() {
@@ -54,16 +54,16 @@ function getcompChoice() {
 
 //         if (userChoice === 'rock' && compChoice === 'scissors') {
 //             humanScore++;
-//             results.textContent(`You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`);
+//             outcomes.textContent(`You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`);
 //         } else if (userChoice === 'scissors' && compChoice === 'paper') {
 //             humanScore++;
-//             results.textContent(`You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`);
+//             outcomes.textContent(`You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`);
 //         } else if (userChoice === 'paper' && compChoice ==='rock') {
 //             humanScore++;
-//             results.textContent(`You win! Paper beats Rock. Score:${humanScore}:${computerScore}`);
+//             outcomes.textContent(`You win! Paper beats Rock. Score:${humanScore}:${computerScore}`);
 //         } else {
 //             computerScore++;
-//             results.textContent(`You lose! The computer wins. Score:${humanScore}:${computerScore}`);
+//             outcomes.textContent(`You lose! The computer wins. Score:${humanScore}:${computerScore}`);
             
 //         }
 //     };
@@ -81,13 +81,13 @@ function getcompChoice() {
 //         playRound(humanSelection, computerSelection);
 // }
 // if (humanScore == 3 && computerScore == 2){
-//     results.textContent('You win this round!');
+//     outcomes.textContent('You win this round!');
 //     } else if (humanScore == 3 && computerScore == 1){
-//         results.textContent('You win this round!');
+//         outcomes.textContent('You win this round!');
 //     } else if (humanScore == 3 && computerScore == 0){
-//         results.textContent('You win this round!');
+//         outcomes.textContent('You win this round!');
 //     } else {
-//         results.textContent("You lose! Computer wins.")
+//         outcomes.textContent("You lose! Computer wins.")
 //     }
 // };
 
@@ -95,7 +95,7 @@ function getcompChoice() {
 
 
 // Make your function’s userChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
-// Write the code for your playRound function to results.textContent a string value representing the round winner, such as: “You lose! Paper beats Rock”.
+// Write the code for your playRound function to outcomes.textContent a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 // Increment the humanScore or computerScore variable based on the round winner.
 
 // function playGame() {
@@ -115,12 +115,12 @@ function getcompChoice() {
 //         }
 //     }
 
-//     const results = document.getElementById('results'); // Assuming there's an element with id="results"
+//     const outcomes = document.getElementById('outcomes'); // Assuming there's an element with id="outcomes"
 
 //     if (humanScore === 3 && computerScore <= 2) {
-//         results.textContent = 'You win this round!';
+//         outcomes.textContent = 'You win this round!';
 //     } else {
-//         results.textContent = 'You lose! Computer wins.';
+//         outcomes.textContent = 'You lose! Computer wins.';
 //     }
 // }
 
@@ -132,6 +132,9 @@ const scissors = document.getElementById("scissors");
 
 const container = document.getElementById("container")
 container.style.cssText = "color: red; background: black";
+
+const result = document.getElementById("result");
+result.style.cssText = "color: red; background: black";
 
 
 rock.style.cssText = "color: yellow; background: black;";
@@ -151,61 +154,76 @@ scissors.style.cssText = "color: red; background: black;";
 let humanScore = 0;
 let computerScore = 0;
 
+
 function playRound(userChoice, compChoice) {
-    const results = document.createElement("div");
+    const outcomes = document.createElement("div");
+    const decision = document.createElement("div");
+    let rounds = 5;
 
     if (userChoice === compChoice){
-        results.textContent = "it's a tie!";
+        outcomes.textContent = "it's a tie!";
     } else if (userChoice === 'rock' && compChoice === 'scissors') {
         humanScore++;
-        results.textContent = `You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`;
+        outcomes.textContent = `You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`;
     } else if (userChoice === 'scissors' && compChoice === 'paper') {
         humanScore++;
-        results.textContent = `You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`;
+        outcomes.textContent = `You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`;
     } else if (userChoice === 'paper' && compChoice ==='rock') {
         humanScore++;
-        results.textContent = `You win! Paper beats Rock. Score:${humanScore}:${computerScore}`;
+        outcomes.textContent = `You win! Paper beats Rock. Score:${humanScore}:${computerScore}`;
     } else {
         computerScore++;
-        results.textContent = `You lose! The computer wins. Score:${humanScore}:${computerScore}`;
+        outcomes.textContent = `You lose! The computer wins. Score:${humanScore}:${computerScore}`;
     }
-    container.appendChild(results);
+
+    for (let i = 0; i <= rounds; i++){
+        if (humansScore === computerScore){
+            decision.textContent = `It's a tie! No one wins`;
+        } else if (humanScore > computerScore){
+            decision.textContent = `Congratulations! You win.`;
+        } else (computerScore > humanScore){
+            decision.textContent = `You lose! Computer wins.`;
+        }
+    };
+
+    container.appendChild(outcomes);
+    // result.appendChild(decision);
 };
 
 // The idea of game() is to iterate over the playRound function 5 times until a winner is declared
 
-const rounds = 0
 
-function game(userChoice){
-    if (rounds >= 5) return;
 
-    const compChoice = getcompChoice();
-    playRound(userChoice, compChoice);
-    rounds++;
+// function game(){
 
-    if (rounds === 5){
-        const outcome = document.createElement("div");
-        if (humanScore > computerScore) {
-            outcome.textContent = 'You win this round!';
-        } else if (computerScore > humanScore) {
-            outcome.textContent = 'You lose! Computer wins.';
-        } else {
-            `It's a tie. No one wins.`
-        }
-        container.appendChild(outcome);
-    };
+//     for (let i = 0; i < 5; i++){
+//         const compChoice = getcompChoice();
+//         playRound(userChoice, compChoice);
 
-};
+//         if (i === 5){
+//             const outcome = document.createElement("div");
+//             if (humanScore > computerScore) {
+//                 outcome.textContent = 'You win this round!';
+//             } else if (computerScore > humanScore) {
+//                 outcome.textContent = 'You lose! Computer wins.';
+//             } else {
+//                 outcome.textContent = `It's a tie. No one wins.`;
+//             }
+//             container.appendChild(outcome);
+//             }
+//         }
 
-rock.addEventListener("click", game('rock'));
+// };
+
+// rock.addEventListener("click", () => game());
     
 
 
-// rock.addEventListener("click", function() {
-//     const computerSelection = getcompChoice();
+rock.addEventListener("click", function() {
+    const computerSelection = getcompChoice();
 
-//     playRound("rock", computerSelection);    
-// });
+    playRound("rock", computerSelection);    
+});
 
 // paper.addEventListener("click", function() {
 //     const computerSelection = getcompChoice();
