@@ -138,8 +138,8 @@ rock.style.cssText = "color: yellow; background: black;";
 paper.style.cssText = "color: orange; background: black;";
 scissors.style.cssText = "color: red; background: black;";
 
-let humanScore = 0;
-let computerScore = 0;
+// let humanScore = 0;
+// let computerScore = 0;
 
 
 // Find a way to iterate over the playRound function such that the game ends when the score hits 5
@@ -147,6 +147,9 @@ let computerScore = 0;
 // Method 1: Store all of the textContent outcomes—that iterate the scores—into a variable to be called on later
 // Method 2: Create parameters for the score variables to be iterated over 5 rounds. Alter the userChoice and compChoice
 // parameters such they are only declared when the buttons are pressed and not in the actual function itself
+
+let humanScore = 0;
+let computerScore = 0;
 
 function playRound(userChoice, compChoice) {
     const results = document.createElement("div");
@@ -169,34 +172,29 @@ function playRound(userChoice, compChoice) {
     container.appendChild(results);
 };
 
-function game(){
+// The idea of game() is to iterate over the playRound function 5 times until a winner is declared
+
+function game(userChoice){
+    const outcome = document.createElement("div");
+
     for (let i = 0; i < 5; i++){
-        console.log(`Action performed ${i + 1} times.`)
-    }
-}
+        const compChoice = getcompChoice();
 
+        playRound(userChoice, compChoice);
+        if (humanScore === 3 && computerScore <= 2) {
+        outcome.textContent = 'You win this round!';
+        } else {
+        outcome.textContent = 'You lose! Computer wins.';
+        }
 
+    };
 
+    container.appendChild(outcome);
+};
 
+rock.addEventListener("click", game('rock'));
     
 
-
-//     const decision = document.createElement("div");
-
-//     for (let i = 0; i <= 5; i++){
-//         let userScore = 0
-//         let compScore = 0
-//         playRound(humanSelection, computerSelection);
-
-//         if (userScore === 3 && compScore <= 2) {
-//             decision.textContent = 'You win this round!';
-//         } else {
-//             decision.textContent = 'You lose! Computer wins.';
-//         }
-//     };
-
-//     container.appendChild(decision);
-// }
 
 // rock.addEventListener("click", function() {
 //     const computerSelection = getcompChoice();
@@ -216,13 +214,7 @@ function game(){
 //     playRound("scissors", computerSelection);
 // });
 
+// rock.addEventListener("click", game);
 
-function game(){
-    for (let i = 0; i < 5; i++){
-        console.log(`Action performed ${i + 1} times.`)
-    }
-}
-
-rock.addEventListener('click', game);
 
 
