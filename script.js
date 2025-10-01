@@ -134,7 +134,7 @@ const container = document.getElementById("container")
 container.style.cssText = "color: red; background: black";
 
 const result = document.getElementById("result");
-result.style.cssText = "color: red; background: black";
+result.style.cssText = "color: gold; background: black";
 
 
 rock.style.cssText = "color: yellow; background: black;";
@@ -158,7 +158,6 @@ let computerScore = 0;
 function playRound(userChoice, compChoice) {
     const outcomes = document.createElement("div");
     const decision = document.createElement("div");
-    let rounds = 5;
 
     if (userChoice === compChoice){
         outcomes.textContent = "it's a tie!";
@@ -176,68 +175,38 @@ function playRound(userChoice, compChoice) {
         outcomes.textContent = `You lose! The computer wins. Score:${humanScore}:${computerScore}`;
     }
 
-    for (let i = 0; i <= rounds; i++){
-        if (humansScore === computerScore){
-            decision.textContent = `It's a tie! No one wins`;
-        } else if (humanScore > computerScore){
-            decision.textContent = `Congratulations! You win.`;
-        } else (computerScore > humanScore){
-            decision.textContent = `You lose! Computer wins.`;
+    if (humanScore === 5 || computerScore === 5) {
+        if (humanScore > computerScore) {
+            decision.textContent = 'You win the game!';
+        } else if (computerScore > humanScore) {
+            decision.textContent = 'Computer wins the game!';
+        } else {
+            decision.textContent = 'It\'s a tie!';
         }
+            
     };
-
     container.appendChild(outcomes);
-    // result.appendChild(decision);
+    result.appendChild(decision);
 };
-
-// The idea of game() is to iterate over the playRound function 5 times until a winner is declared
-
-
-
-// function game(){
-
-//     for (let i = 0; i < 5; i++){
-//         const compChoice = getcompChoice();
-//         playRound(userChoice, compChoice);
-
-//         if (i === 5){
-//             const outcome = document.createElement("div");
-//             if (humanScore > computerScore) {
-//                 outcome.textContent = 'You win this round!';
-//             } else if (computerScore > humanScore) {
-//                 outcome.textContent = 'You lose! Computer wins.';
-//             } else {
-//                 outcome.textContent = `It's a tie. No one wins.`;
-//             }
-//             container.appendChild(outcome);
-//             }
-//         }
-
-// };
-
-// rock.addEventListener("click", () => game());
     
 
 
 rock.addEventListener("click", function() {
     const computerSelection = getcompChoice();
-
     playRound("rock", computerSelection);    
 });
 
-// paper.addEventListener("click", function() {
-//     const computerSelection = getcompChoice();
+paper.addEventListener("click", function() {
+    const computerSelection = getcompChoice();
+    playRound("paper", computerSelection);
+});
 
-//     playRound("paper", computerSelection);
-// });
+scissors.addEventListener("click", function() {
+    const computerSelection = getcompChoice();
+    playRound("scissors", computerSelection);
+});
 
-// scissors.addEventListener("click", function() {
-//     const computerSelection = getcompChoice();
 
-//     playRound("scissors", computerSelection);
-// });
-
-// rock.addEventListener("click", game);
 
 
 
