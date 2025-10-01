@@ -174,22 +174,27 @@ function playRound(userChoice, compChoice) {
 
 // The idea of game() is to iterate over the playRound function 5 times until a winner is declared
 
+const rounds = 0
+
 function game(userChoice){
-    const outcome = document.createElement("div");
+    if (rounds >= 5) return;
 
-    for (let i = 0; i < 5; i++){
-        const compChoice = getcompChoice();
+    const compChoice = getcompChoice();
+    playRound(userChoice, compChoice);
+    rounds++;
 
-        playRound(userChoice, compChoice);
-        if (humanScore === 3 && computerScore <= 2) {
-        outcome.textContent = 'You win this round!';
+    if (rounds === 5){
+        const outcome = document.createElement("div");
+        if (humanScore > computerScore) {
+            outcome.textContent = 'You win this round!';
+        } else if (computerScore > humanScore) {
+            outcome.textContent = 'You lose! Computer wins.';
         } else {
-        outcome.textContent = 'You lose! Computer wins.';
+            `It's a tie. No one wins.`
         }
-
+        container.appendChild(outcome);
     };
 
-    container.appendChild(outcome);
 };
 
 rock.addEventListener("click", game('rock'));
