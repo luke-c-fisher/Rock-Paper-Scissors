@@ -1,10 +1,10 @@
 
 // STEP 1: Write the logic to get the computer code
-// create a function called "getComputerChoice"
-// Make "getComputerChoice" randomly return the following string values: "rock", "paper", or "scissors"
+// create a function called "getcompChoice"
+// Make "getcompChoice" randomly return the following string values: "rock", "paper", or "scissors"
 // Use "console log" to test the results
 
-function getComputerChoice() {
+function getcompChoice() {
     let randomNum = Math.random();
     if (randomNum < 0.33) {
         return "rock";
@@ -16,12 +16,12 @@ function getComputerChoice() {
 }
 
 // STEP 2: Write the logic to get the human choice
-// create a function called "getHumanChoice"
-// Make "getHumanChoice" return one of the valid options--"rock","paper", or "scissors"--depending on what the user inputs 
+// create a function called "getuserChoice"
+// Make "getuserChoice" return one of the valid options--"rock","paper", or "scissors"--depending on what the user inputs 
 // Test the function using "results.textContent"
 
 
-// function getHumanChoice() {
+// function getuserChoice() {
 //     let humanInput = prompt("Pick an option: Rock, Paper, Scissors", '');
 
 //     if (humanInput) {
@@ -46,19 +46,19 @@ function getComputerChoice() {
 
 // STEP 4: Write the logic to play a single round 
 // Create a new function named playRound.
-// Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.
+// Define two parameters for playRound: userChoice and compChoice. Use these two parameters to take the human and computer choices as arguments.
 
 
 
-//  function playRound(humanChoice, computerChoice) {
+//  function playRound(userChoice, compChoice) {
 
-//         if (humanChoice === 'rock' && computerChoice === 'scissors') {
+//         if (userChoice === 'rock' && compChoice === 'scissors') {
 //             humanScore++;
 //             results.textContent(`You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`);
-//         } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+//         } else if (userChoice === 'scissors' && compChoice === 'paper') {
 //             humanScore++;
 //             results.textContent(`You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`);
-//         } else if (humanChoice === 'paper' && computerChoice ==='rock') {
+//         } else if (userChoice === 'paper' && compChoice ==='rock') {
 //             humanScore++;
 //             results.textContent(`You win! Paper beats Rock. Score:${humanScore}:${computerScore}`);
 //         } else {
@@ -69,15 +69,15 @@ function getComputerChoice() {
 //     };
 
 
-// create condition for computerChoice 
+// create condition for compChoice 
 
 // function playGame(){
 //     let humanScore = 0;
 //     let computerScore = 0;
 
 //     for(i = 1; i <= 5; i++) {
-//         const humanSelection = getHumanChoice();
-//         const computerSelection = getComputerChoice();
+//         const humanSelection = getuserChoice();
+//         const computerSelection = getcompChoice();
 //         playRound(humanSelection, computerSelection);
 // }
 // if (humanScore == 3 && computerScore == 2){
@@ -94,7 +94,7 @@ function getComputerChoice() {
 // playGame(humanScore, computerScore);
 
 
-// Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
+// Make your function’s userChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
 // Write the code for your playRound function to results.textContent a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 // Increment the humanScore or computerScore variable based on the round winner.
 
@@ -103,8 +103,8 @@ function getComputerChoice() {
 //     let computerScore = 0;
 
 //     for (let i = 1; i <= 5; i++) {
-//         const humanSelection = getHumanChoice();
-//         const computerSelection = getComputerChoice();
+//         const humanSelection = getuserChoice();
+//         const computerSelection = getcompChoice();
 //         const result = playRound(humanSelection, computerSelection);
 
 //         // Assuming playRound returns 'win', 'lose', or 'draw'
@@ -141,30 +141,46 @@ scissors.style.cssText = "color: red; background: black;";
 let humanScore = 0;
 let computerScore = 0;
 
- function playRound(humanChoice, computerChoice) {
+
+// Find a way to iterate over the playRound function such that the game ends when the score hits 5
+
+// Method 1: Store all of the textContent outcomes—that iterate the scores—into a variable to be called on later
+// Method 2: Create parameters for the score variables to be iterated over 5 rounds. Alter the userChoice and compChoice
+// parameters such they are only declared when the buttons are pressed and not in the actual function itself
+
+function playRound(userChoice, compChoice) {
     const results = document.createElement("div");
 
-        if (humanChoice === computerChoice){
-            results.textContent = "it's a tie!";
-        } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-            humanScore++;
-            results.textContent = `You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`;
-        } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-            humanScore++;
-            results.textContent = `You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`;
-        } else if (humanChoice === 'paper' && computerChoice ==='rock') {
-            humanScore++;
-            results.textContent = `You win! Paper beats Rock. Score:${humanScore}:${computerScore}`;
-        } else {
-            computerScore++;
-            results.textContent = `You lose! The computer wins. Score:${humanScore}:${computerScore}`;
-            
-        }
-
+    if (userChoice === compChoice){
+        results.textContent = "it's a tie!";
+    } else if (userChoice === 'rock' && compChoice === 'scissors') {
+        humanScore++;
+        results.textContent = `You win! Rock beats Scissors. Score:${humanScore}:${computerScore}`;
+    } else if (userChoice === 'scissors' && compChoice === 'paper') {
+        humanScore++;
+        results.textContent = `You win! Scissors beats Paper. Score:${humanScore}:${computerScore}`;
+    } else if (userChoice === 'paper' && compChoice ==='rock') {
+        humanScore++;
+        results.textContent = `You win! Paper beats Rock. Score:${humanScore}:${computerScore}`;
+    } else {
+        computerScore++;
+        results.textContent = `You lose! The computer wins. Score:${humanScore}:${computerScore}`;
+    }
     container.appendChild(results);
 };
 
-// function playGame (){
+function game(){
+    for (let i = 0; i < 5; i++){
+        console.log(`Action performed ${i + 1} times.`)
+    }
+}
+
+
+
+
+    
+
+
 //     const decision = document.createElement("div");
 
 //     for (let i = 0; i <= 5; i++){
@@ -182,27 +198,31 @@ let computerScore = 0;
 //     container.appendChild(decision);
 // }
 
-for (let i = 0; i <= 5; i++){
-    rock.addEventListener("click", function() {
-        let humanSelection = "rock";
-        let computerSelection = getComputerChoice();
+// rock.addEventListener("click", function() {
+//     const computerSelection = getcompChoice();
 
-        playRound(humanSelection, computerSelection);
-    });
-};
+//     playRound("rock", computerSelection);    
+// });
 
-paper.addEventListener("click", function() {
-    let humanSelection = "paper";
-    let computerSelection = getComputerChoice();
+// paper.addEventListener("click", function() {
+//     const computerSelection = getcompChoice();
 
-    playRound(humanSelection, computerSelection);
-});
+//     playRound("paper", computerSelection);
+// });
 
-scissors.addEventListener("click", function() {
-    let humanSelection = "scissors";
-    let computerSelection = getComputerChoice();
+// scissors.addEventListener("click", function() {
+//     const computerSelection = getcompChoice();
 
-    playRound(humanSelection, computerSelection);
-});
+//     playRound("scissors", computerSelection);
+// });
+
+
+function game(){
+    for (let i = 0; i < 5; i++){
+        console.log(`Action performed ${i + 1} times.`)
+    }
+}
+
+rock.addEventListener('click', game);
 
 
